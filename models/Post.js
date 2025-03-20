@@ -3,13 +3,13 @@ const mongoose = require('mongoose');
 const postSchema = new mongoose.Schema({
     title: {
         type: String,
-        required: true, // Fixed typo
+        required: true, 
         min: 1,
         max: 100
     },
     description: {
         type: String,
-        required: true, // Fixed typo
+        required: true, 
         min: 3,
         max: 500
     },
@@ -22,6 +22,6 @@ const postSchema = new mongoose.Schema({
         ref: 'User', 
         required: true
     }
-}, { timestamps: true }); // Adds createdAt and updatedAt
+}, { timestamps: true }); 
 
-module.exports = mongoose.model('Post', postSchema); // Changed 'posts' to 'Post'
+module.exports = mongoose.model('Post', postSchema); 
