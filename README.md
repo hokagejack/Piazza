@@ -29,3 +29,7 @@ PUT: /api/posts/:id
 - Updates a post but only the post creator can do this. Requires auth
 - request headers: auth-token received when user logs in
 - request params: id of the post to retrieve
+DELETE: /api/posts/:id
+- deletes a post but only the post creator can do this. Requires auth
+- request headers: auth-token received when user logs in
+- request params: id of the post to delete
