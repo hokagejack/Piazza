@@ -7,7 +7,7 @@ Second Web Dev Assignment endpoints
 Prerequisites:
 - Node.js installed (v14+ recommended)
 - MongoDB database setup
-- The API will be available at http://localhost:PORT/.
+- The API will be available at http://localhost:3000/.
 
 # User Authentication
 
