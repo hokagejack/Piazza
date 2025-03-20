@@ -1,9 +1,9 @@
 # Piazza
-Second Web Dev Assignment
+Second Web Dev Assignment endpoints 
 
-#Endpoints
 
-User Authentication:
+
+# User Authentication:
 
 POST /api/user/register
 - registers a new user
@@ -12,7 +12,7 @@ POST /api/user/login
 - Logs in a user and returns an authentication token
 
 
-Posts:
+# Posts:
 
 GET /api/posts
 - Fetches all posts (publicly available)
