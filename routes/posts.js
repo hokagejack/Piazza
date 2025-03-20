@@ -56,7 +56,7 @@ router.put('/:id', verifyToken, async (req, res) => {
 
         // Update post fields
         post.title = req.body.title || post.title;
-        post.content = req.body.content || post.content;
+        post.description = req.body.description || post.description;
 
         const updatedPost = await post.save();
         res.send(updatedPost);
