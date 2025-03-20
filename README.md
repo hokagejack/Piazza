@@ -2,35 +2,75 @@
 Second Web Dev Assignment endpoints 
 
 
+# Setup Instructions
 
-# User Authentication:
+Prerequisites:
+- Node.js installed (v14+ recommended)
+- MongoDB database setup
+- The API will be available at http://localhost:PORT/.
 
-POST /api/user/register
-- registers a new user
+# User Authentication
 
-POST /api/user/login
-- Logs in a user and returns an authentication token
+1. Register a New User
+- Endpoint: POST /api/user/register
+- Description: Registers a new user in the system.
+
+Request Body: {
+"username": ""
+"email": ""
+"password": ""
+}
 
 
-# Posts:
+2. User Login
+- Endpoint: POST /api/user/login
+- Description: Authenticates a user and returns an authentication token.
 
-GET /api/posts
-- Fetches all posts (publicly available)
+Request Body:{
+"email":""
+"password":""
+}
 
-POST /api/posts
-- creates a new post but requires authentication
-- request headers: auth-token received when user logs in
 
-GET /api/posts/:id 
-- fetches an individual post by its id (publicly available)
-- request params: id of the post to retrieve
+# Post Management
 
-PUT: /api/posts/:id 
-- Updates a post but only the post creator can do this. Requires auth
-- request headers: auth-token received when user logs in
-- request params: id of the post to retrieve
+1. Fetch All Posts
+- Endpoint: GET /api/posts
+- Description: Retrieves all publicly available posts. (auth token not required)
 
-DELETE: /api/posts/:id
-- deletes a post but only the post creator can do this. Requires auth
-- request headers: auth-token received when user logs in
-- request params: id of the post to delete
+2. Create a New Post
+- Endpoint: POST /api/posts
+- Description: Creates a new post (requires authentication).
+
+Request Headers:
+auth-token: ...
+
+Request Body:{
+"title": ""
+"description":""
+}
+
+
+3. Fetch a Single Post
+- Endpoint: GET /api/posts/:id
+- Description: Retrieves a specific post by its ID.
+
+4. Update a Post
+- Endpoint: PUT /api/posts/:id
+- Description: Updates an existing post (only the creator can update it).
+
+Request Headers:
+auth-token: ...
+
+Request Body: {
+"title": ""
+"description":""
+}
+
+
+5. Delete a Post
+- Endpoint: DELETE /api/posts/:id
+- Description: Deletes a post (only the creator can delete it).
+
+Request Headers:
+auth-token:...
