@@ -8,19 +8,20 @@ require('dotenv').config();
 
 app.use(bodyParser.json())
 
-// Import your routes
+// Import  routes
 const postsRoute = require('./routes/posts')
 const authRoute = require('./routes/auth')
 
-// Define your API routes
+// Define API routes
 app.use('/api/posts', postsRoute)
 app.use('/api/user', authRoute)
 
-// Make sure your catch-all route is after the API routes
+// catch all
 app.use('/', (req, res) => {
     res.send('Home')
 })
 
+//console logs to make sure everything is working
 app.listen(3000, () => {
     console.log('Server is running')
 })
