@@ -21,7 +21,7 @@ router.post('/register', async(req,res)=>{
         return res.status(400).send({message:'User already exists'})
     }
 
-    // I created a hashed represenation of my password!
+    // hashed represenation of my password
     const salt = await bcryptjs.genSalt(5)
     const hashedPassword = await bcryptjs.hash(req.body.password,salt)
 
@@ -63,4 +63,4 @@ router.post('/login', async(req,res)=>{
     res.header('auth-token',token).send({'auth-token':token})
 })
 
-module.exports=router
+module.exports=router //never forget this
